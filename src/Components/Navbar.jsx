@@ -181,7 +181,10 @@ const DesktopNav = ({
             color: "black",
           }}
         >
-          <Text textTransform={"uppercase"} onClick={() => scrollToSection(HomeSec)}>home</Text>
+        <div class="hvr-grow">
+        
+        <Text textTransform={"uppercase"} onClick={() => scrollToSection(HomeSec)}>home</Text>
+        </div>
         </Box>
       </Box>
 
@@ -202,7 +205,10 @@ const DesktopNav = ({
             color: "black",
           }}
         >
-          <Text textTransform={"uppercase"} onClick={() => scrollToSection(AboutSec)}>about</Text>
+        <div class="hvr-grow">
+        
+        <Text textTransform={"uppercase"} onClick={() => scrollToSection(AboutSec)}>about</Text>
+        </div>
         </Box>
       </Box>
 
@@ -223,7 +229,10 @@ const DesktopNav = ({
             color: "black",
           }}
         >
-          <Text textTransform={"uppercase"} onClick={() => scrollToSection(ContactSec)}>contact</Text>
+        <div class="hvr-grow">
+        
+        <Text textTransform={"uppercase"} onClick={() => scrollToSection(ContactSec)}>contact</Text>
+        </div>
         </Box>
       </Box>
     </Stack>

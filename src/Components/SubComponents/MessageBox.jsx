@@ -1,5 +1,6 @@
 import { Box, Button, Input, Text, Textarea } from '@chakra-ui/react';
 import React, { useState } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 
 
 function MessageBox() {
@@ -17,12 +18,24 @@ function MessageBox() {
       setIsLoading(false);
     }, 8000);
   };
+
+  const [state,handleSubmitMessage] = useForm("myyrkeay")
+
+  if (state.succeeded) {
+    return (
+      <>
+        <Box w={{ base: "100%", lg: "70%" }} display={"flex"} justifyContent={"center"} alignItems={"center"} border={"1px solid lightgrey"} borderRadius={"5px"}>
+          <Text mt={"0px"} color={"#f76113"} fontSize={{ base: "10px", lg: "30px" }} fontWeight={700}>Thank You Agent will contact you shortly!</Text>
+        </Box>
+      </>
+    )
+  }
   
 
   return (
     <Box w={{ base: "90%", lg: "70%" }} m={"auto"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
       <Box w={"100%"}  bg={"#f8f9fa"} border={"1px solid lightgrey"} borderRadius={"5px"} p={"30px 20px 30px 20px"} display={"flex"} flexDirection={"column"} gap={"20px"}>
-        <form style={{ display: "flex", flexDirection: "column", gap: "20px" }} onSubmit={handleSubmit}>
+        <form style={{ display: "flex", flexDirection: "column", gap: "20px" }} onSubmit={handleSubmitMessage}>
           <Box>
             <Text>Your Name</Text>
             <Input placeholder='Name' required={true} name="username" borderRadius={"0px"} />

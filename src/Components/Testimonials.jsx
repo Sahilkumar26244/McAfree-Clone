@@ -111,7 +111,9 @@ function Testimonials() {
                 <Box w={"70%"} m={"auto"} display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"} gap={"20px"}>
                     <Box>
                         <Circle size={"200px"}>
-                            <Image src={e.image} w={"100%"} h={"100%"} objectFit={"cover"} />
+                            <div class="hvr-grow">
+                                <Image src={e.image} w={"100%"} h={"100%"} objectFit={"contain"} />
+                            </div>
                         </Circle>
                     </Box>
                     <Box>
