@@ -44,35 +44,56 @@ function Testimonials() {
     
       const testimonials = [
         {
-            image:"https://avpro.searchcloud.store/assets/images/mbr-2.jpeg",
-          description:"The great thing about geek is that there is no deductible for replacing or repairing my electronics.",
-          owner:"— Marry G., WA",
-          user:"USER"
+            image:"https://res.cloudinary.com/dmzzzl5jj/image/upload/v1712031735/mcafee-package_sgfuad.png",
+            description:"Voted as the top antivirus software of 2024, this cutting-edge security solution offers unparalleled protection for both computers and mobile devices, ensuring utmost accuracy in safeguarding your digital assets.",
+            owner:"McAfee",
         },
         {
-            image:"https://avpro.searchcloud.store/assets/images/mbr-2.jpeg",
-          description:"Geeks is the main reason I purchase tech products online. Every time I've had to utilize my GeekcareProtection Plans, it has been a positive experience..",
-          owner:"— Scott R., TX",
-          user:"USER"
+            image:"https://res.cloudinary.com/dmzzzl5jj/image/upload/v1712031747/avast-package_rxsnnt.png",
+            description:"An intelligent, swift, and dependable antivirus solution that minimizes its impact on system performance, providing robust protection for your devices.",
+            owner:"Avast",
         },
         {
-            image:"https://avpro.searchcloud.store/assets/images/mbr-2.jpeg",
-          description:"Geek's zero deductibles redefine tech shopping. Hassle-free repairs and replacements make them my go-to choice. Unbeatable service and satisfaction!",
-          owner:"— Pierre Laurent",
-          user:"USER"
+            image:"https://res.cloudinary.com/dmzzzl5jj/image/upload/v1712031749/norton-package_xt5jsm.png",
+            description:"High-precision, low-footprint antivirus solution with online backup capabilities.",
+            owner:"Norton 360",
         },
         {
-            image:"https://avpro.searchcloud.store/assets/images/mbr-2.jpeg",
-          description:"Geek is my tech haven. No deductibles mean stress-free purchases. Their reliable service and positive experiences make them my trusted companion.",
-          owner:"— Elena Rodriguez",
-          user:"USER"
+            image:"https://res.cloudinary.com/dmzzzl5jj/image/upload/v1712031747/bitdefender-package_tg0jvk.png",
+            description:"Delivers outstanding virus protection, features an extensive array of capabilities, and maintains minimal impact on system performance.",
+            owner:"Bitdefender",
         },
         {
-            image:"https://avpro.searchcloud.store/assets/images/mbr-2.jpeg",
-          description:"Geek's commitment shines through zero deductibles. Stress-free repairs and replacements make every encounter positive. Geek is my tech guardian, always delivering satisfaction.",
-          owner:"— Hans Schmidt",
-          user:"USER"
-        }
+            image:"https://res.cloudinary.com/dmzzzl5jj/image/upload/v1712031748/kaspersky-package_vf7cht.png",
+            description:"All-encompassing antivirus solution catering to your every security requirement.",
+            owner:"Kaspersky",
+        },
+        {
+            image:"https://res.cloudinary.com/dmzzzl5jj/image/upload/v1712031748/avira-package_prxpwn.png",
+            description:"Award-winning premium antivirus solution suitable for all devices",
+            owner:"Avira"
+        },
+        {
+            image:"https://res.cloudinary.com/dmzzzl5jj/image/upload/v1712031749/malwarebytes-premium-1_u2qcor.png",
+            description:"High-precision, low-impact antivirus solution with built-in online backup functionality.",
+            owner:"Malwarebytes",
+        },
+        {
+            image:"https://res.cloudinary.com/dmzzzl5jj/image/upload/v1712031749/pngwing.com-3_sungba.png",
+            description:"Well-rounded security solution boasting powerful antivirus capabilities.",
+            owner:"Webroot",
+        },
+        {
+            image:"https://res.cloudinary.com/dmzzzl5jj/image/upload/v1712032141/trend-micro-antivirus-500x500_smr0i0.webp",
+            description:"Complete antivirus solution addressing all your security requirements.",
+            owner:"Trend Micro",
+        },
+        {
+            image:"https://res.cloudinary.com/dmzzzl5jj/image/upload/v1712032141/eset-package_1_rnguul.png",
+            description:"Robust security solution featuring potent antivirus capabilities.",
+            owner:"ESET",
+        },
+        
       ]
 
 
@@ -83,22 +104,21 @@ function Testimonials() {
             <Box>
                 <Text fontSize={{base:"25px",lg:"40px"}} fontWeight={700} textAlign={"center"}>What Our Fantastic Users Say</Text>
             </Box>
-            <Flex mt={"20px"} position="relative" >
-            <Carousel itemsToShow={1} itemPadding={[0, 10]} breakPoints={breakPoints} pagination={false}   >
+            <Flex mt={"50px"} position="relative" >
+            <Carousel itemsToShow={1} itemPadding={[0, 10]} breakPoints={breakPoints} pagination={false}  >
               {testimonials.map((e,i) => (
                 <>
-                <Box display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"} gap={"20px"}>
+                <Box w={"70%"} m={"auto"} display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"} gap={"20px"}>
                     <Box>
                         <Circle size={"200px"}>
-                            <Image src={e.image} w={"100%"} h={"100%"} objectFit={"cover"} borderRadius={"50%"} />
+                            <Image src={e.image} w={"100%"} h={"100%"} objectFit={"cover"} />
                         </Circle>
                     </Box>
                     <Box>
                         <Text textAlign={"center"}  fontSize={{base:"13px",lg:"16px"}} fontWeight={500}>{e.description}</Text>
                     </Box>
                     <Box textAlign={"center"}>
-                        <Text  fontSize={{base:"13px",lg:"16px"}} fontWeight={500}>{e.owner}</Text>
-                        <Text  fontSize={{base:"13px",lg:"16px"}} fontWeight={400}>{e.user}</Text>
+                        <Text  fontSize={{base:"13px",lg:"22px"}} fontWeight={600}>{e.owner}</Text>
                     </Box>
                 </Box>
                 </>

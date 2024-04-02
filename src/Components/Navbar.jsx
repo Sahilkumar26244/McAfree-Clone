@@ -7,43 +7,34 @@ import {
   Icon,
   IconButton,
   Image,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
   Stack,
   Text,
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronRightIcon,
-} from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import logo from "../assets/logo.png"
 
-
-
-function Navbar() {
+function Navbar({ HomeSec, AboutSec, ContactSec, scrollToSection, onOpen }) {
   const { isOpen, onToggle } = useDisclosure();
-  const [isSticky,setIsSticky] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if(window.scrollY > 0){
-        setIsSticky(true)
-      }else{
-        setIsSticky(false)
+      if (window.scrollY > 0) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
       }
-    }
+    };
 
-    window.addEventListener('scroll',handleScroll)
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll',handleScroll)
-    }
-  },[])
-
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const background = isSticky ? "!important" : "!important";
   const backgroundMob = isSticky ? "black" : "black";
@@ -53,11 +44,11 @@ function Navbar() {
   return (
     <Box>
       <Flex
-        bg={{base:"#bbbbbb",lg:background}}
+        bg={{ base: "#bbbbbb", lg: background }}
         color={color}
-        minH={"15px"}
+        minH={"0px"}
         px={{ base: 5, lg: "70px" }}
-        py={{ base: "10px", lg: "25px" }}
+        py={{ base: "0px", lg: "0px" }}
         borderBottom={1}
         align={"center"}
         position="fixed" // Add sticky positioning
@@ -66,24 +57,30 @@ function Navbar() {
         as="nav"
         w={"100%"}
       >
-        <Flex 
-           bg={"#bbbbbb"}
-          w={"1250px"} m={"auto"}
-          py={{ base: 2, lg: 1 }}
+        <Flex
+          bg={"#bbbbbb"}
+          w={"1250px"}
+          m={"auto"}
+          py={{ base: 0, lg: 0 }}
           justify={{ base: "center", md: "start" }}
           justifyContent={"space-between"}
         >
-          
-            <Box
-              mt={"0px"}
-              w={{ base: "30%", xl: "10%" }}
-              display={"flex"}
-              alignItems={"center"}
-              pl={"20px"}
-            >
-              <Image src={"https://icloudsexperts.com/wp-content/uploads/2021/07/white.-removebg-preview-e1708322182351.png"} w={"120px"} h={"100%"} objectFit={"contain"} />
-            </Box>
-          
+          <Box
+            mt={"0px"}
+            w={{ base: "25%", xl: "15%" }}
+            display={"flex"}
+            alignItems={"center"}
+            pl={"20px"}
+          >
+            <Image
+              src={
+                logo
+              }
+              w={"100%"}
+              h={"100%"}
+              objectFit={"contain"}
+            />
+          </Box>
 
           <Flex
             pl={"60px"}
@@ -93,18 +90,34 @@ function Navbar() {
             display={{ base: "none", md: "none", lg: "flex", xl: "flex" }}
           >
             <Box display={"flex"} alignItems={"center"}>
-              <DesktopNav color={color} background={background} />
+              <DesktopNav
+                color={color}
+                background={background}
+                HomeSec={HomeSec}
+                AboutSec={AboutSec}
+                ContactSec={ContactSec}
+                scrollToSection={scrollToSection}
+              />
             </Box>
           </Flex>
 
           {/* yha pe lgana */}
 
           {/* yha pe lgana */}
-          <Box display={{base:"none",lg:"flex"}}>
-            <Button textTransform={"uppercase"} color={"white"} bg={"#810101"} _hover={{bg:"black"}}>Activate your key</Button>
+          <Box display={{ base: "none", lg: "flex" }} alignItems={"center"}>
+            <Button
+              textTransform={"uppercase"}
+              color={"white"}
+              bg={"#810101"}
+              _hover={{ bg: "black" }}
+              onClick={onOpen}
+            >
+              Activate your key
+            </Button>
           </Box>
         </Flex>
-        <Flex bg={"#bbbbbb"}
+        <Flex
+          bg={"#bbbbbb"}
           alignItems={"center"}
           flex={{ base: 1, md: "auto" }}
           ml={{ base: -2 }}
@@ -130,63 +143,89 @@ function Navbar() {
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav y={"10px"} opacity={""} backgroundMob={backgroundMob} color={color} />
+        <MobileNav
+          y={"10px"}
+          opacity={""}
+          backgroundMob={backgroundMob}
+          color={color}
+        />
       </Collapse>
     </Box>
   );
 }
 
-const DesktopNav = ({ color, background }) => {
+const DesktopNav = ({
+  color,
+  background,
+  HomeSec,
+  AboutSec,
+  ContactSec,
+  scrollToSection,
+}) => {
   return (
     <Stack direction={"row"} spacing={5}>
-      {NAV_ITEMS.map((navItem, index) => (
-        <Box key={index}>
-          <Popover trigger={"hover"} placement={"bottom-start"}>
-            <PopoverTrigger>
-              
-                <Box
-                  display={"flex"}
-                  alignItems={"center"}
-                  as="a"
-                  p={2}
-                  fontSize={"15px"}
-                  fontWeight={700}
-                  letterSpacing={"1px"}
-                  cursor={"pointer"}
-                  color={color}
-                  opacity={1}
-                  _hover={{
-                    textDecoration: "none",
-                    color: "#8bc53f",
-                  }}
-                >
-                  <Text textTransform={"uppercase"}>
-                  {navItem.label}
-                  </Text>
-                  
-                </Box>
-              
-            </PopoverTrigger>
-
-            {navItem.children && (
-              <PopoverContent
-                border={0}
-                boxShadow={"xl"}
-                bg={background}
-                p={4}
-                rounded={"xl"}
-                minW={"sm"}
-              >
-                <Stack>
-                  {navItem.children.map((child, index) => (
-                    <DesktopSubNav key={index} {...child} />
-                  ))}
-                </Stack>
-              </PopoverContent>
-            )}
-          </Popover>
+      <Box>
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          as="a"
+          p={2}
+          fontSize={"15px"}
+          fontWeight={700}
+          letterSpacing={"1px"}
+          cursor={"pointer"}
+          color={color}
+          opacity={1}
+          _hover={{
+            textDecoration: "none",
+            color: "black",
+          }}
+        >
+          <Text textTransform={"uppercase"} onClick={() => scrollToSection(HomeSec)}>home</Text>
         </Box>
-      ))}
+      </Box>
+
+      <Box>
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          as="a"
+          p={2}
+          fontSize={"15px"}
+          fontWeight={700}
+          letterSpacing={"1px"}
+          cursor={"pointer"}
+          color={color}
+          opacity={1}
+          _hover={{
+            textDecoration: "none",
+            color: "black",
+          }}
+        >
+          <Text textTransform={"uppercase"} onClick={() => scrollToSection(AboutSec)}>about</Text>
+        </Box>
+      </Box>
+
+      <Box>
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          as="a"
+          p={2}
+          fontSize={"15px"}
+          fontWeight={700}
+          letterSpacing={"1px"}
+          cursor={"pointer"}
+          color={color}
+          opacity={1}
+          _hover={{
+            textDecoration: "none",
+            color: "black",
+          }}
+        >
+          <Text textTransform={"uppercase"} onClick={() => scrollToSection(ContactSec)}>contact</Text>
+        </Box>
+      </Box>
     </Stack>
   );
 };
@@ -200,8 +239,8 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: useColorModeValue("#8bc53f", "gray.900") }}      
-      >
+      _hover={{ bg: useColorModeValue("#8bc53f", "gray.900") }}
+    >
       <Stack
         direction={"row"}
         align={"center"}
@@ -211,11 +250,10 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
         }}
       >
         <Box>
-          
-            <Text transition={"all .3s ease"} fontWeight={500}>
-              {label}
-            </Text>
-          
+          <Text transition={"all .3s ease"} fontWeight={500}>
+            {label}
+          </Text>
+
           <Text fontSize={"sm"}>{subLabel}</Text>
         </Box>
         <Flex
@@ -234,7 +272,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
   );
 };
 
-const MobileNav = ({ y, opacity,backgroundMob,color }) => {
+const MobileNav = ({ y, opacity, backgroundMob, color }) => {
   return (
     <Stack
       bg={"#bbbbbb"}
@@ -243,7 +281,7 @@ const MobileNav = ({ y, opacity,backgroundMob,color }) => {
       mt={{ base: "40px", md: "70px", lg: "110px" }}
       position="fixed" // Add sticky positioning
       top={y} // Stick to the top of the viewport
-      zIndex="1000"
+      zIndex="1"
       as="nav"
       w={"100%"}
       opacity={opacity}
@@ -252,8 +290,15 @@ const MobileNav = ({ y, opacity,backgroundMob,color }) => {
         <MobileNavItem key={index} {...navItem} color={color} />
       ))}
       <Box display={"flex"} justifyContent={"center"} mt={"20px"}>
-            <Button textTransform={"uppercase"} color={"white"} bg={"#810101"} _hover={{bg:"black"}}>Activate your key</Button>
-          </Box>
+        <Button
+          textTransform={"uppercase"}
+          color={"white"}
+          bg={"#810101"}
+          _hover={{ bg: "black" }}
+        >
+          Activate your key
+        </Button>
+      </Box>
     </Stack>
   );
 };
@@ -274,19 +319,12 @@ const MobileNavItem = ({ label, children, color }) => {
         }}
       >
         <Flex gap={"10px"} alignItems={"center"}>
-          
-            <Text
-              fontSize={{ lg: "30px" }}
-              fontWeight={600}
-              color={color}
-            >
-              {label}
-            </Text>
-            </Flex>
-            <Divider/>
+          <Text fontSize={{ lg: "30px" }} fontWeight={600} color={color}>
+            {label}
+          </Text>
+        </Flex>
+        <Divider />
       </Box>
-
-      
     </Stack>
   );
 };
@@ -294,16 +332,16 @@ const MobileNavItem = ({ label, children, color }) => {
 const NAV_ITEMS = [
   {
     label: "Home",
-    href:"/about"
+    href: "/about",
   },
   {
-      label: "About",
-      href: "/contactUs",
-    },
-    {
-      label: "Contact",
-      href: "/contactUs",
-    },
+    label: "About",
+    href: "/contactUs",
+  },
+  {
+    label: "Contact",
+    href: "/contactUs",
+  },
 ];
 
 export default Navbar;

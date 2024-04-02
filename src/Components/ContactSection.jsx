@@ -3,9 +3,9 @@ import React from "react";
 import MessageBox from "./SubComponents/MessageBox";
 import RightSection from "./SubComponents/RightSection";
 
-function ContactSection() {
+function ContactSection({ContactSec}) {
   return (
-    <div>
+    <div ref={ContactSec}>
       <Box position="relative" h={{ base: "200vh", lg: "110vh" }}>
         <Box
           h={"100%"}

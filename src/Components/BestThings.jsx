@@ -1,9 +1,9 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 
-function BestThings() {
+function BestThings({AboutSec}) {
   return (
-    <div>
+    <div ref={AboutSec} >
       <Box bg={"#738e9b"} p={{base:"20px",lg:"100px 50px"}}>
         <Flex w={{ base: "90%", lg: "1250px" }} m={"auto"} bg={"white"} p={{base:"20px",lg:"50px"}} gap={"40px"} direction={{base:"column",lg:"row"}}>
           <Box w={{base:"100%",lg:"50%"}}>
