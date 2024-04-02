@@ -112,7 +112,7 @@ function Navbar({ HomeSec, AboutSec, ContactSec, scrollToSection, onOpen }) {
               _hover={{ bg: "black" }}
               onClick={onOpen}
             >
-              Activate your key
+            Activate Now
             </Button>
           </Box>
         </Flex>
@@ -307,7 +307,7 @@ const MobileNav = ({ y, opacity, backgroundMob, color, onOpen }) => {
           _hover={{ bg: "black" }}
           onClick={onOpen}
         >
-          Activate your key
+          Activate Now
         </Button>
       </Box>
     </Stack>

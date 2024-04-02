@@ -5,7 +5,7 @@ function ActivateButton({onOpen}) {
   return (
     <div>
         <Box display={"flex"} justifyContent={"center"} p={"20px"}>
-            <Button onClick={onOpen} textTransform={"uppercase"} color={"white"} bg={"#810101"} _hover={{bg:"black"}}>Activate Product Key</Button>
+            <Button onClick={onOpen} textTransform={"uppercase"} color={"white"} bg={"#810101"} _hover={{bg:"black"}}>Activate Now</Button>
         </Box>
     </div>
   )

