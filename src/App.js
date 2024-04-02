@@ -11,7 +11,7 @@ function App() {
 
 
   const scrollToSection = (elementRef) => {
-    console.log(elementRef)
+    // console.log(elementRef)
     if (elementRef && elementRef.current) {
       window.scrollTo({
         top: elementRef.current.offsetTop,

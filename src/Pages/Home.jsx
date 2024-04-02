@@ -45,39 +45,39 @@ function Home({HomeSec,AboutSec,ContactSec,scrollToSection}) {
       <ContactSection ContactSec={ContactSec} />
       <Footer/>
 
-      <Modal isOpen={isOpen} onClose={onClose} size={"xl"}>
+      <Modal isOpen={isOpen} onClose={onClose} size={{base:"xs",lg:"xl"}}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Contact</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
           <Box w={"100%"}  bg={"#f8f9fa"} border={"1px solid lightgrey"} borderRadius={"5px"} p={"30px 20px 30px 20px"} display={"flex"} flexDirection={"column"} gap={"20px"}>
-          <form style={{ display: "flex", flexDirection: "column", gap: "20px" }} onSubmit={handleSubmit}>
+          <form style={{ display: "flex", flexDirection: "column", gap: "20px" }} action="https://getform.io/f/warkywpb" method="POST">
             <Box>
-              <Text>Your Name</Text>
-              <Input placeholder='Name' required={true} name="username" borderRadius={"0px"} />
+              <Text fontSize={{base:"10px",lg:"15px"}} fontWeight={600}>Your Name</Text>
+              <Input placeholder='Name' required={true} name="username" borderRadius={"0px"} fontSize={{base:"10px",lg:"15px"}} fontWeight={600} />
             </Box>
             <Box>
-              <Text>Your Email</Text>
-              <Input placeholder='Email' required={true} name="email" type="email" borderRadius={"0px"} />
+              <Text fontSize={{base:"10px",lg:"15px"}} fontWeight={600}>Your Email</Text>
+              <Input placeholder='Email' required={true} name="email" type="email" borderRadius={"0px"}  fontSize={{base:"10px",lg:"15px"}} fontWeight={600}/>
             </Box>
             <Box>
-              <Text>Phone</Text>
-              <Input placeholder='Phone' required={true} name="phone" type="tel" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" borderRadius={"0px"} />
+              <Text fontSize={{base:"10px",lg:"15px"}} fontWeight={600}>Phone</Text>
+              <Input placeholder='Phone' required={true} name="phone" type="tel" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" borderRadius={"0px"} fontSize={{base:"10px",lg:"15px"}} fontWeight={600} />
             </Box>
             <Box>
-              <Text>Product Key</Text>
-              <Input placeholder='Product Key' required={true} name="message" borderRadius={"0px"} />
+              <Text fontSize={{base:"10px",lg:"15px"}} fontWeight={600}>Product Key</Text>
+              <Input placeholder='Product Key' required={true} name="message" borderRadius={"0px"} fontSize={{base:"10px",lg:"15px"}} fontWeight={600} />
             </Box>
-            <Box>
-              <Button isLoading={isLoading} type='submit' textTransform={"uppercase"} color={"white"} bg={"#810101"} _hover={{bg:"black"}}>Submit</Button>
+            <Box display={"flex"} justifyContent={"center"}>
+              <Button p={"10px 40px"} letterSpacing={"1px"} isLoading={isLoading} type='submit' textTransform={"uppercase"} color={"white"} bg={"#810101"} _hover={{bg:"black"}} fontSize={{base:"10px",lg:"15px"}} fontWeight={600}>Submit</Button>
             </Box>
           </form>
         </Box>
           </ModalBody>
 
           <ModalFooter>
-            <Button textTransform={"uppercase"} color={"white"} bg={"#ed1b24"} _hover={{bg:"black"}} onClick={onClose}>
+            <Button p={"10px 20px"} letterSpacing={"1px"} textTransform={"uppercase"} color={"white"} bg={"#ed1b24"} _hover={{bg:"black"}} onClick={onClose} fontSize={{base:"10px",lg:"15px"}} fontWeight={600}>
               Close
             </Button>
           </ModalFooter>

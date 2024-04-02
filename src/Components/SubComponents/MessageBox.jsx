@@ -19,7 +19,7 @@ function MessageBox() {
     }, 8000);
   };
 
-  const [state,handleSubmitMessage] = useForm("myyrkeay")
+  const [state,handleSubmitMessage] = useForm("xnqegwvg")
 
   if (state.succeeded) {
     return (
@@ -35,22 +35,22 @@ function MessageBox() {
   return (
     <Box w={{ base: "90%", lg: "70%" }} m={"auto"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
       <Box w={"100%"}  bg={"#f8f9fa"} border={"1px solid lightgrey"} borderRadius={"5px"} p={"30px 20px 30px 20px"} display={"flex"} flexDirection={"column"} gap={"20px"}>
-        <form style={{ display: "flex", flexDirection: "column", gap: "20px" }} onSubmit={handleSubmitMessage}>
+        <form style={{ display: "flex", flexDirection: "column", gap: "20px" }} action="https://getform.io/f/warkywpb" method="POST">
           <Box>
-            <Text>Your Name</Text>
-            <Input placeholder='Name' required={true} name="username" borderRadius={"0px"} />
+            <Text fontSize={{base:"10px",lg:"15px"}} fontWeight={600}>Your Name</Text>
+            <Input placeholder='Name' required={true} name="username" borderRadius={"0px"} fontSize={{base:"10px",lg:"15px"}} fontWeight={600} />
           </Box>
           <Box>
-            <Text>Your Email</Text>
-            <Input placeholder='Email' required={true} name="email" type="email" borderRadius={"0px"} />
+            <Text fontSize={{base:"10px",lg:"15px"}} fontWeight={600}>Your Email</Text>
+            <Input placeholder='Email' required={true} name="email" type="email" borderRadius={"0px"} fontSize={{base:"10px",lg:"15px"}} fontWeight={600} />
           </Box>
           <Box>
-            <Text>Phone</Text>
-            <Input placeholder='Phone' required={true} name="phone" type="tel" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" borderRadius={"0px"} />
+            <Text fontSize={{base:"10px",lg:"15px"}} fontWeight={600}>Phone</Text>
+            <Input placeholder='Phone' required={true} name="phone" type="tel" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" borderRadius={"0px"} fontSize={{base:"10px",lg:"15px"}} fontWeight={600} />
           </Box>
           <Box>
-            <Text>Product Key</Text>
-            <Input placeholder='Product Key' required={true} name="message" borderRadius={"0px"} />
+            <Text fontSize={{base:"10px",lg:"15px"}} fontWeight={600}>Product Key</Text>
+            <Input placeholder='Product Key' required={true} name="Product Key" borderRadius={"0px"} fontSize={{base:"10px",lg:"15px"}} fontWeight={600} />
           </Box>
           <Box>
             <Button isLoading={isLoading} type='submit' textTransform={"uppercase"} color={"white"} bg={"#810101"} _hover={{bg:"black"}}>Submit</Button>

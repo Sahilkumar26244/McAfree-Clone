@@ -6,7 +6,7 @@ import RightSection from "./SubComponents/RightSection";
 function ContactSection({ContactSec}) {
   return (
     <div ref={ContactSec}>
-      <Box position="relative" h={{ base: "200vh", lg: "110vh" }}>
+      <Box position="relative" h={{ base: "110vh", lg: "110vh" }}>
         <Box
           h={"100%"}
           backgroundImage={`url(${"https://res.cloudinary.com/dmzzzl5jj/image/upload/v1711950906/burst-kUqqaRjJuw0-unsplash_fnqjjd.jpg"})`}

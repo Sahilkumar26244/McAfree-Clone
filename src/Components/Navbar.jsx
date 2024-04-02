@@ -148,6 +148,7 @@ function Navbar({ HomeSec, AboutSec, ContactSec, scrollToSection, onOpen }) {
           opacity={""}
           backgroundMob={backgroundMob}
           color={color}
+          onOpen={onOpen}
         />
       </Collapse>
     </Box>
@@ -281,7 +282,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
   );
 };
 
-const MobileNav = ({ y, opacity, backgroundMob, color }) => {
+const MobileNav = ({ y, opacity, backgroundMob, color, onOpen }) => {
   return (
     <Stack
       bg={"#bbbbbb"}
@@ -304,6 +305,7 @@ const MobileNav = ({ y, opacity, backgroundMob, color }) => {
           color={"white"}
           bg={"#810101"}
           _hover={{ bg: "black" }}
+          onClick={onOpen}
         >
           Activate your key
         </Button>
