@@ -15,6 +15,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { HamburgerIcon, CloseIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import logo from "../assets/logo.png"
+import { Link } from "react-router-dom";
 
 function Navbar({ HomeSec, AboutSec, ContactSec, scrollToSection, onOpen }) {
   const { isOpen, onToggle } = useDisclosure();
@@ -105,15 +106,18 @@ function Navbar({ HomeSec, AboutSec, ContactSec, scrollToSection, onOpen }) {
 
           {/* yha pe lgana */}
           <Box display={{ base: "none", lg: "flex" }} alignItems={"center"}>
-            <Button
-              textTransform={"uppercase"}
-              color={"white"}
-              bg={"#810101"}
-              _hover={{ bg: "black" }}
-              onClick={onOpen}
-            >
-            Activate Now
-            </Button>
+              <Link to='/activate'>
+              <Button 
+                textTransform={"uppercase"}
+                color={"white"}
+                bg={"#810101"}
+                _hover={{ bg: "black" }}
+                
+              >
+              Setup Product Key
+              </Button>
+              
+              </Link>
           </Box>
         </Flex>
         <Flex

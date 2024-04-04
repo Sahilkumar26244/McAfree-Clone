@@ -1,5 +1,7 @@
 import { useRef } from "react";
 import Home from "./Pages/Home";
+import { Route, Routes } from "react-router-dom";
+import StepperForm from "./Pages/StepperForm";
 
 
 
@@ -28,7 +30,10 @@ function App() {
 
   return (
     <div className="App">
-      <Home HomeSec={HomeSec} AboutSec={AboutSec} ContactSec={ContactSec} scrollToSection={scrollToSection} />
+      <Routes>
+        <Route path="/" element={<Home HomeSec={HomeSec} AboutSec={AboutSec} ContactSec={ContactSec} scrollToSection={scrollToSection} />} />
+        <Route path="/activate" element={<StepperForm/>} />
+      </Routes>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Text } from '@chakra-ui/react'
 import React from 'react'
-import hero from "../assets/hero.png"
+import hero from "../assets/hero1.svg"
 
 function HeroSection({ HomeSec }) {
   return (

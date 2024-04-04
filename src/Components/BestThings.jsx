@@ -7,7 +7,7 @@ function BestThings({AboutSec}) {
       <Box bg={"#738e9b"} p={{base:"20px",lg:"100px 50px"}}>
         <Flex w={{ base: "90%", lg: "1250px" }} m={"auto"} bg={"white"} p={{base:"20px",lg:"50px"}} gap={"40px"} direction={{base:"column",lg:"row"}}>
           <Box w={{base:"100%",lg:"50%"}}>
-            <Image src="https://avpro.searchcloud.store/assets/images/office-image-2.jpg" />
+            <Image src="https://res.cloudinary.com/dmzzzl5jj/image/upload/v1712145581/jason-goodman-Oalh2MojUuk-unsplash_wyklfn.jpg" />
           </Box>
           <Box w={{base:"100%",lg:"50%"}} display={"flex"} justifyContent={"center"} alignItems={"center"}>
             <Box display={"flex"} flexDirection={"column"} gap={"10px"} >

@@ -53,7 +53,7 @@ function MessageBox() {
             <Input placeholder='Product Key' required={true} name="Product Key" borderRadius={"0px"} fontSize={{base:"10px",lg:"15px"}} fontWeight={600} />
           </Box>
           <Box>
-            <Button isLoading={isLoading} type='submit' textTransform={"uppercase"} color={"white"} bg={"#810101"} _hover={{bg:"black"}}>Activate Now</Button>
+            <Button isLoading={isLoading} type='submit' textTransform={"uppercase"} color={"white"} bg={"#810101"} _hover={{bg:"black"}}>Setup Product Key</Button>
           </Box>
         </form>
       </Box>
